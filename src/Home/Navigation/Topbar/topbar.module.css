@@ -1,0 +1,77 @@
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: white;
+  background-color: #0E1E78;
+  padding: 0.8rem 1.5rem;
+  flex-wrap: wrap;
+  border-bottom: 2px dashed #ffffff;
+}
+
+/* Contact Info */
+.topInfo {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.topItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.icon{
+  font-size: 1.5rem;
+}
+
+/* Social Icons */
+.socialLinks {
+  display: flex;
+  gap: 10px;
+}
+
+.socialIcon {
+  background-color: #e2e3ec;
+  padding: 0.6rem;
+  border-radius: 50%;
+  color: #0a165e;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  text-decoration: none;
+}
+
+/* .socialIcon:hover {
+  background-color: #405eff;
+} */
+
+.instaColor {
+  background-color: #dd354e;
+  color: #ffff;
+}
+.fbColor {
+  background-color: #2e4882;
+  color: #ffff;
+}
+.lnColor {
+  background-color: #0066ab;
+  color: #ffff;
+}
+.twColor {
+  background-color: #ffff;
+  color: #1695d6;
+}
+.ytColor {
+  background-color: #ffff;
+  color: #e60019;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .topBar {
+    display: none;
+  }
+}

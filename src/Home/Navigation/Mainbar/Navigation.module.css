@@ -1,0 +1,238 @@
+/* Navbar Base Styles */
+.navbar {
+  color: #0d1c70;
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  background-color: #0e1e78;
+  padding: 1rem 0;
+  /* margin-bottom: 0.5rem; */
+}
+
+/* Main Navbar */
+.mainNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1.2rem 1.2rem;
+  color: #0d1c70;
+  margin: 0 2rem;
+  border-radius: 1.5rem;
+  
+}
+
+/* Align logo and nav items on the left */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: #0d1c70;
+  margin-right: 2rem; /* Spacing between logo and nav items */
+}
+
+.menuToggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #0d1c70;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-grow: 1; /* Ensures nav items span the left */
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navItem {
+  position: relative;
+  cursor: pointer;
+}
+
+.navLink {
+  color: #0d1c70;
+  text-decoration: none;
+  position: relative;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  color: #00bfff;
+}
+
+/* Dropdown Styling */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  color: #0d1c70;
+  list-style: none;
+  margin: 0;
+  padding-right:3rem; 
+  text-align: left;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in;
+  transform: translateY(150px);
+}
+
+.navItem:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  max-height: 500px; /* Adjust based on dropdown content size */
+  transform: translatey(40px);
+}
+
+.dropdown li {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.dropdown li:hover {
+  background-color: #f1f1f1;
+  color: #00bfff;
+}
+
+/* Align actions (search icon & Get in Touch button) on the right */
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-left: auto; /* Push actions to the right */
+}
+
+.searchIcon {
+  font-size: 1.5rem;
+  color: #0d1c70;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: #2B4DFF;
+  color: #f1f1f1;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.hambugerBt {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 913px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off-screen initially */
+    width: 70%; /* Adjust width for mobile */
+    height: 100vh;
+    background-color: #ffffff;
+    color: #0d1c70;
+    padding: 2rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 1s ease-in-out;
+    z-index: 1000;
+    gap: 1rem;
+  }
+
+  .menuOpen {
+    left: 0; /* Slide into view */
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .navItem {
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .navLink {
+    text-decoration: none;
+    color: #0d1c70;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .dropdown {
+    position: static;
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    visibility: hidden;
+    box-shadow: none;
+    transition: all 1s ease-in-out;
+  }
+
+  .navItem:hover .dropdown {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .searchIcon {
+    display: none;
+    text-align: center;
+  }
+
+  .btn {
+    display: none;
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .hambugerBt {
+    display: flex;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    
+  }
+  .ln{
+    background-color: #0e1e78;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+  }
+  .ct{
+    background-color:#0e1e78;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+}
