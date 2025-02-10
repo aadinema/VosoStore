@@ -4,6 +4,7 @@
   width: 100vw;
   height: 100vh;
   padding: 0rem 1rem;
+  background-color: #F5F6F7;
 }
 
 .main-section {
@@ -13,13 +14,13 @@
 }
 
 .sec-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #0a165e;
   padding-top: 5rem;
 }
 
 .title {
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   font-size: 1.3rem;
   line-height: 2.5rem;
 }
@@ -58,22 +59,24 @@
   background-color: #0a165e;
   border: 1px #0a165e solid;
   display: inline-block;
-  padding: 0.8rem;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
   padding-bottom: 1rem;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .right-section i {
   background-color: #0a165e;
   border: 1px #0a165e solid;
   display: inline-block;
-  padding: 0.8rem;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
   padding-bottom: 1rem;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .right-section {
@@ -82,7 +85,7 @@
 }
 
 .form-container {
-  max-width: 600px;
+  max-width: 800px;
   margin: 50px auto;
   padding: 3rem;
   background-color: #f5f6f7;
@@ -94,12 +97,13 @@
 .form-title {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #111827;
+  color: #0a165e;
   margin-bottom: 0.5rem;
 }
 
 .form-subtitle {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: #6b7280;
   margin-bottom: 1.5rem;
 }
@@ -119,9 +123,12 @@
   flex: 1;
   padding: 0.75rem;
   font-size: 0.9rem;
-  border: 1px solid #d1d5db;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #0a165e;
   border-radius: 6px;
-  color: #f5f6f7;
+  color: #0a165e;
+  background-color: transparent;
 }
 
 .full-width {
@@ -133,10 +140,13 @@
   height: 100px;
   padding: 0.75rem;
   font-size: 0.9rem;
-  border: 1px solid #d1d5db;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #0a165e;
   border-radius: 6px;
-  color: #374151;
+  color: #0a165e;
   resize: none;
+  background-color: transparent;
 }
 
 .form-button {

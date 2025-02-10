@@ -5,10 +5,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import styles from "./Navigation.module.css";
+import { IoMdArrowDroprightCircle } from "react-icons/io";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown
   const pathname = usePathname(); // Get current route
+
+  // Toggle nested dropdown
+  const toggleDropdown = (dropdownName) => {
+    setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
+  };
 
   return (
     <header className={styles.navbar}>
@@ -36,117 +43,166 @@ const Navigation = () => {
         {/* Navigation Links */}
         <nav className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ""}`}>
           <ul className={styles.navList}>
-            {/* Demos Dropdown */}
+            {/* Home */}
             <li className={styles.navItem}>
-              <span className={styles.navLink}>Home</span>
-              <ul className={styles.dropdown}>
-                {[
-                  "main-demo",
-                  "it-solutions",
-                  "Tech-Agency",
-                  "Startup-Home",
-                  "IT-Consulting",
-                  "Software-Company",
-                  "Digital-Agency",
-                  "Tech-Company",
-                ].map((demo) => (
-                  <li key={demo}>
-                    <Link
-                      href={`/demos/${demo}`}
-                      className={
-                        pathname === `/demos/${demo}`
-                          ? styles.activeLink
-                          : styles.navLink
-                      }
-                    >
-                      {demo.replace("-", " ")}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <Link
+                href="/"
+                className={
+                  pathname === "/" ? styles.activeLink : styles.navLink
+                }
+              >
+                Home
+              </Link>
             </li>
 
-            {/* Pages Dropdown */}
+            {/* About Us */}
             <li className={styles.navItem}>
-              <span className={styles.navLink}>About Us</span>
-              <ul className={styles.dropdown}>
-                {[
-                  "About-Us",
-                  "Services",
-                  "Team",
-                  "Team-Details",
-                  "Utility",
-                  "Faqs",
-                  "404",
-                  "Testimonial",
-                ].map((page) => (
-                  <li key={page}>
-                    <Link
-                      href={`/pages/${page}`}
-                      className={
-                        pathname === `/pages/${page}`
-                          ? styles.activeLink
-                          : styles.navLink
-                      }
-                    >
-                      {page.replace("-", " ")}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <Link
+                href="/aboutUs"
+                className={
+                  pathname === "/aboutUs" ? styles.activeLink : styles.navLink
+                }
+              >
+                About Us
+              </Link>
             </li>
 
-            {/* Portfolio Dropdown */}
+            {/* Services Dropdown */}
             <li className={styles.navItem}>
-              <span className={styles.navLink}>Services</span>
-              <ul className={styles.dropdown}>
+              <span
+                className={styles.navLink}
+                onClick={() => toggleDropdown("services")}
+              >
+                Services
+              </span>
+              <ul
+                className={`${styles.dropdown} ${
+                  openDropdown === "services" ? styles.dropdownOpen : ""
+                }`}
+              >
+                {/* Shopping Nested Dropdown */}
+                <li className={styles.navItem}>
+                  <span
+                    className={styles.navLink}
+                    onClick={() => toggleDropdown("shopping")}
+                  >
+                    Shopping <IoMdArrowDroprightCircle />
+                  </span>
+                  <ul
+                    className={`${styles.nestedDropdown} ${
+                      openDropdown === "shopping"
+                        ? styles.nestedDropdownOpen
+                        : ""
+                    }`}
+                  >
+                    {[
+                      "Amazon-Associate-Partner",
+                      "Flipkart-Associate-Partner",
+                      "Ajio-Associate-Partner",
+                      "Booking-Associate-Partner",
+                      "Nykaa-Associate-Partner",
+                    ].map((item) => (
+                      <li key={item}>
+                        <Link
+                          href={`/shopping/${item.replace(/ /g, "-")}`}
+                          className={styles.navLink}
+                        >
+                          {/* <Link
+                          href={`/shopping/${item
+                            .toLowerCase()
+                            .replace(/ /g, "-")}`}
+                          className={styles.navLink}
+                        > */}
+                          {item}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+
+                {/* Domestic Travel Booking Nested Dropdown */}
+                <li className={styles.navItem}>
+                  <span
+                    className={styles.navLink}
+                    onClick={() => toggleDropdown("domestic-travel")}
+                  >
+                    Domestic Travel Booking <IoMdArrowDroprightCircle />
+                  </span>
+                  <ul
+                    className={`${styles.nestedDropdown} ${
+                      openDropdown === "domestic-travel"
+                        ? styles.nestedDropdownOpen
+                        : ""
+                    }`}
+                  >
+                    {[
+                      "Bus-Tickets-Booking",
+                      "Flight-Tickets-Booking",
+                      "Hotel-Booking",
+                      "Rail-Tickets-Booking",
+                    ].map((item) => (
+                      <li key={item}>
+                        <Link
+                          href={`/${item.replace(/ /g, "-")}`}
+                          // href={`/domestic-travel/${item.replace(/ /g, "-")}`}
+                          className={styles.navLink}
+                        >
+                          {item}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+
+                {/* Other Services */}
                 {[
-                  "Courier Service ",
-                  "Shopping",
+                  "Courier-Service",
                   "Bill Payments",
                   "Insurance",
                   "ONDC",
-                  "Software solution - Fintech",
-                  "Aadhar Enabled Payments System",
+                  "Software-solution-Fintech",
+                  "Aadhar-Enabled-Payments-System",
                   "BBPS",
-                  "mATM (Micro ATM transactions)",
-                  "Domestic Money Transfer(DMT",
-                  "Prepaid Recharges",
-                  "International Flight Booking",
-                  "International Hotel Booking",
-                  "Pan Card",
-                ].map((portfolio) => (
-                  <li key={portfolio}>
+                  "mATM(Micro-ATM-transactions)",
+                  "Domestic-Money-Transfer(DMT)",
+                  "Prepaid-Recharges",
+                  "International-Flight-Booking",
+                  "International-Hotel-Booking",
+                  "Pan-Card",
+                  "BFSI-Saas",
+                  "Digital-Marketing-Services",
+                ].map((service) => (
+                  <li key={service}>
                     <Link
-                      href={`/portfolio/${portfolio}`}
+                      href={`/${service}`}
                       className={
-                        pathname === `/portfolio/${portfolio}`
+                        pathname === `/${service}`
                           ? styles.activeLink
                           : styles.navLink
                       }
                     >
-                      {portfolio.replace("-", " ")}
+                      {service.replace(/-/g, " ")}
                     </Link>
                   </li>
                 ))}
               </ul>
             </li>
 
-            {/* Blog Dropdown */}
+            {/* Voso Courier */}
             <li className={styles.navItem}>
               <span className={styles.navLink}>voso courier</span>
               <ul className={styles.dropdown}>
-                {["Merchant solutions", "Partner solutions"].map((blog) => (
+                {["Merchant-solutions", "Partner-solutions"].map((blog) => (
                   <li key={blog}>
                     <Link
-                      href={`/blog/${blog}`}
+                      href={`/${blog}`}
                       className={
-                        pathname === `/blog/${blog}`
+                        pathname === `/${blog}`
                           ? styles.activeLink
                           : styles.navLink
                       }
                     >
-                      {blog ? blog.replace("-", " ") : "Blog"}
+                      {blog.replace(/-/g, " ")}
                     </Link>
                   </li>
                 ))}
@@ -155,16 +211,17 @@ const Navigation = () => {
 
             {/* Pay */}
             <li className={styles.navItem}>
-              <Link href="/Contact-Us" className={styles.navLink}>
+              <Link href="/Pay" className={styles.navLink}>
                 Pay
               </Link>
             </li>
+
             {/* Voso-Vyapar */}
             <li className={styles.navItem}>
               <Link
-                href="/Contact-Us"
+                href="/voso-vyapar"
                 className={
-                  pathname === "/Contact-Us"
+                  pathname === "/voso-vyapar"
                     ? styles.activeLink
                     : styles.navLink
                 }
@@ -172,6 +229,7 @@ const Navigation = () => {
                 Voso-Vyapar
               </Link>
             </li>
+
             {/* Contact Us */}
             <li className={styles.navItem}>
               <Link
@@ -196,12 +254,6 @@ const Navigation = () => {
             <button className={`${styles.btn} ${styles.buttonGlow}`}>
               Schedule a demo
             </button>
-            <button className={styles.btn}>Store Partner's Login</button>
-
-            <div className={styles.hambugerBt}>
-              <button className={styles.ln}>Learn More</button>
-              <button className={styles.ct}>Contact Us</button>
-            </div>
           </div>
         </nav>
       </div>

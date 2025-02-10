@@ -1,0 +1,158 @@
+.mainContainer {
+  background-color: #f5f6f7;
+  width: 100vw;
+  height: auto;
+  padding: 2rem 2.5rem;
+}
+.container {
+  width: 100%;
+  padding: 2rem 1.5rem;
+  margin: 2rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+/* for SSF image */
+.imageContainer {
+  max-width: 100vw;
+  height: auto;
+  padding: 2rem 1.5rem;
+  margin: 2rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+
+.left {
+  width: 50%;
+  padding: 0rem 2rem;
+}
+.right {
+  width: 50%;
+}
+.image1 {
+  width: 90%;
+  overflow: hidden;
+}
+.image2 {
+  position: absolute;
+  bottom: 0px;
+  left: 270px;
+  width: 25%;
+}
+.primaryImage {
+  display: flex;
+}
+.heading {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-weight: 600;
+  color: #0a165e;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-bottom: 5px solid #0a165e;
+}
+.subheading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0a165e;
+  margin-bottom: 1rem;
+}
+.paragraph {
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+  word-spacing: 0.2rem;
+  text-align: justify;
+}
+.primaryButton {
+  padding: 1rem 1.5rem;
+  background-color: #2b4dff;
+  color: #ffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
+/* .customers{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    text-align: center;
+}
+.border{
+    border-right: 1px solid grey ;
+    padding-right: 4rem;
+} */
+.number {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #0a165e;
+  margin-bottom: 1rem;
+}
+.para {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: grey;
+}
+.list {
+  list-style-type: none;
+  font: 1rem;
+}
+.list li {
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0a165e;
+}
+.list li > i {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 2rem 1rem;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .image1 {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .image3 {
+    display: none;
+  }
+
+  .secondaryImage {
+    display: none;
+  }
+
+  .customers {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .border {
+    border-right: none;
+    padding: 0;
+  }
+
+  .primaryButton {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

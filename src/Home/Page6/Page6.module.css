@@ -1,0 +1,113 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f5f6f7;
+  }
+  
+  .headingContainer {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .outerHeading {
+    font-size: 2.5rem;
+    color: #0a165e;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .cardContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap; 
+  }
+  
+  .card {
+    background-color: transparent;
+    border-radius: 8px;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+    padding: 1.5rem;
+    text-align: center;
+    width: 400px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .imageContainer {
+    margin-bottom: 1.5rem;
+  }
+  
+  .image {
+    width: 300px;
+    height: auto;
+  }
+  
+  .textContainer {
+    text-align: center;
+  }
+  
+  .number {
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: #0a165e;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0a165e;
+    margin: 1.5rem 0;
+  }
+
+  .paragraph{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+    word-spacing: 0.2rem;
+    letter-spacing: 0.02rem;
+    font-weight: 600;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #797878;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .cardContainer {
+      gap: 1rem;
+    }
+  
+    .outerHeading {
+      font-size: 1.75rem;
+    }
+  
+    .card {
+      width: 90%; /* Adjust card width for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .outerHeading {
+      font-size: 1.5rem;
+    }
+  
+    .card {
+      width: 100%; /* Full width for mobile devices */
+    }
+  }
+  

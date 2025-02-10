@@ -12,21 +12,21 @@ const HeroSection = () => {
             {/* Left Content */}
             <div className={styles.textContent}>
               <h1 className={styles.heading}>
-                Voso offers most profitable franchise business in India{" "}
+                Voso offers the most profitable franchise business in India
               </h1>
               <p className={styles.description}>
-                Welcome to VOSO Store, we are India's largest growing, unified
-                portal and multiple service merchant platform with Highest
-                Commissions and Lowest Charges in the industry. So, Join now!
+                Welcome to VOSO Store, India's largest growing, unified portal
+                and multiple service merchant platform with the highest
+                commissions and lowest charges in the industry. Join now!
               </p>
               <div className={styles.buttons}>
-            <button className={`${styles.button} ${styles.primaryButton}`}>
-              Become a Voso Store Partner
-            </button>
-            <button className={`${styles.button} ${styles.secondaryButton}`}>
-              View Services
-            </button>
-          </div>
+                <button className={`${styles.button} ${styles.primaryButton}`}>
+                  Become a Voso Store Partner
+                </button>
+                <button className={`${styles.button} ${styles.secondaryButton}`}>
+                  View Services
+                </button>
+              </div>
             </div>
             {/* Right Image */}
             <div className={styles.imageContent}>
@@ -44,15 +44,18 @@ const HeroSection = () => {
           </div>
         </section>
 
+        {/* Income Calculator Section */}
         <div className={styles.incomeContainer}>
           <h1 className={styles.subheading}>Income Calculator</h1>
           <p className={styles.paragraph}>
-            Calculate, how VOSO Store can help you grow your business by using
-            our online income calculator. See the commissions, and overall
-            earnings and forecast your income accurately with the VOSO Store
-            income calculator, and never let anything on chance.
+            Calculate how VOSO Store can help you grow your business using our
+            online income calculator. See commissions, overall earnings, and
+            forecast your income accurately with the VOSO Store income
+            calculator. Never leave anything to chance.
           </p>
-          <a href="income calculator" className={styles.incomeBt}>Calculate Your Income</a>
+          <a href="income calculator" className={styles.incomeBt}>
+            Calculate Your Income
+          </a>
         </div>
       </div>
     </>

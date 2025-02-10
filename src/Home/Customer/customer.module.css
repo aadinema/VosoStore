@@ -29,8 +29,10 @@
 .card {
   flex: 1 1 calc(33.333% - 2rem); /* Three cards per row on large screens */
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
-  max-width: 400px;
+  max-width: 500px;
   background-color: #ffffff;
   padding: 1.5rem;
   border: none;
@@ -47,15 +49,19 @@
 
 /* Icon Styles */
 .icon {
-  font-size: 2rem;
-  background-color: #e5f1ff;
-  color: #2563eb;
-  padding: 1rem;
-  border-radius: 50%;
+  
+  background-color: #0a165e;
+  /* color: #2563eb; */
+  border-radius: 20%;
   display: inline-block;
+  text-align: center;
+  padding:1rem;
 }
 .icon i{
-  font-size: 4rem;
+  font-size: 3rem;
+  color: #ffffff;
+
+  
 }
 
 /* Card Title and Description */

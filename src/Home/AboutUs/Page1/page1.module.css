@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background-color: #0e1c70;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  
+  .subtitle2 {
+    margin: 0 0.5rem;
+    
+  }

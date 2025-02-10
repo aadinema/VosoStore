@@ -6,7 +6,6 @@
   top: 0;
   background-color: #0e1e78;
   padding: 1rem 0;
-  /* margin-bottom: 0.5rem; */
 }
 
 /* Main Navbar */
@@ -15,57 +14,61 @@
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  padding: 1.2rem 1.2rem;
+  padding: 1.5rem 1rem;
   color: #0d1c70;
   margin: 0 2rem;
   border-radius: 1.5rem;
-  
 }
 
-/* Align logo and nav items on the left */
+/* Logo */
 .logo {
   font-size: 2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   color: #0d1c70;
-  margin-right: 2rem; /* Spacing between logo and nav items */
+  margin-right: 2rem;
 }
 
+/* Menu Toggle (Hamburger) */
 .menuToggle {
   display: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   background: none;
   border: none;
   color: #0d1c70;
   cursor: pointer;
   z-index: 1001;
-  position: relative;
 }
 
+/* Menu */
 .menu {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
-  flex-grow: 1; /* Ensures nav items span the left */
+  flex-grow: 1;
 }
 
+/* Nav List */
 .navList {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
 
+/* Nav Item */
 .navItem {
   position: relative;
   cursor: pointer;
 }
 
+/* Nav Link */
 .navLink {
+  display: inline;
   color: #0d1c70;
   text-decoration: none;
   position: relative;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
@@ -73,7 +76,7 @@
   color: #00bfff;
 }
 
-/* Dropdown Styling */
+/* Dropdown */
 .dropdown {
   position: absolute;
   top: 100%;
@@ -82,7 +85,37 @@
   color: #0d1c70;
   list-style: none;
   margin: 0;
-  padding-right:3rem; 
+  padding: 1rem 0;
+  padding-right: 8rem;
+  text-align: left;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  max-height: auto;
+  /* overflow: hidden; */
+  transition: all 0.4s ease-in-out;
+  transform: translateY(150px);
+}
+
+.navItem:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  max-height: 950px;
+  transform: translateY(35px);
+  z-index: 1;
+}
+
+/* Nested Dropdown */
+.nestedDropdown {
+  position: absolute;
+  top:0;
+  left:40%;
+  background-color: white;
+  color: #0d1c70;
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
   text-align: left;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -91,32 +124,34 @@
   max-height: 0;
   overflow: hidden;
   transition: all 0.4s ease-in;
-  transform: translateY(150px);
 }
 
-.navItem:hover .dropdown {
+.nestedDropdownOpen {
   opacity: 1;
   visibility: visible;
-  max-height: 500px; /* Adjust based on dropdown content size */
-  transform: translatey(40px);
+  max-height: 500px;
+  z-index: 1;
 }
 
-.dropdown li {
-  padding: 0.5rem 1rem;
+/* Dropdown Items */
+.dropdown li,
+.nestedDropdown li {
+  padding: 0.2rem 1rem;
   white-space: nowrap;
 }
 
-.dropdown li:hover {
+.dropdown li:hover,
+.nestedDropdown li:hover {
   background-color: #f1f1f1;
   color: #00bfff;
 }
 
-/* Align actions (search icon & Get in Touch button) on the right */
+/* Actions */
 .actions {
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  margin-left: auto; /* Push actions to the right */
+  margin-left: auto;
 }
 
 .searchIcon {
@@ -126,18 +161,34 @@
 }
 
 .btn {
-  background-color: #2B4DFF;
-  color: #f1f1f1;
-  padding: 0.8rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: bold;
   font-size: 1rem;
+  display: inline-block;
+  outline: 0;
+  border: 0;
   cursor: pointer;
-  border: none;
+  will-change: box-shadow, transform;
+  background: radial-gradient(100% 100% at 100% 0%, #89e5ff 0%, #5468ff 100%);
+  box-shadow: 0px 0.01em 0.01em rgba(45, 35, 66, 0.4),
+    0px 0.3em 0.7em -0.01em rgba(45, 35, 66, 0.3),
+    inset 0px -0.01em 0px rgba(58, 65, 111, 0.5);
+  padding: 0 2em;
+  border-radius: 0.3em;
+  color: #fff;
+  height: 2.6em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.hambugerBt {
-  display: none;
+.btn:hover {
+  box-shadow: 0px 0.1em 0.2em rgba(45, 35, 66, 0.4),
+    0px 0.4em 0.7em -0.1em rgba(45, 35, 66, 0.3),
+    inset 0px -0.1em 0px #3c4fe0;
+  transform: translateY(-0.1em);
+}
+
+.btn:active {
+  box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
+  transform: translateY(0em);
 }
 
 /* Mobile Styles */
@@ -151,8 +202,8 @@
     flex-direction: column;
     position: fixed;
     top: 0;
-    right: -100%; /* Hidden off-screen initially */
-    width: 70%; /* Adjust width for mobile */
+    right: -100%;
+    width: 70%;
     height: 100vh;
     background-color: #ffffff;
     color: #0d1c70;
@@ -164,7 +215,7 @@
   }
 
   .menuOpen {
-    left: 0; /* Slide into view */
+    right: 0;
   }
 
   .navList {
@@ -180,11 +231,7 @@
   }
 
   .navLink {
-    text-decoration: none;
-    color: #0d1c70;
     font-size: 1.2rem;
-    font-weight: 500;
-    transition: color 0.2s;
   }
 
   .dropdown {
@@ -197,7 +244,17 @@
     transition: all 1s ease-in-out;
   }
 
-  .navItem:hover .dropdown {
+  .nestedDropdown {
+    position: static;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: none;
+    transition: all 1s ease-in-out;
+  }
+
+  .navItem:hover .dropdown,
+  .navItem:hover .nestedDropdown {
     max-height: 500px;
     opacity: 1;
     visibility: visible;
@@ -205,34 +262,9 @@
 
   .searchIcon {
     display: none;
-    text-align: center;
   }
 
   .btn {
     display: none;
-    width: 100%;
-    text-align: center;
-
-  }
-
-  .hambugerBt {
-    display: flex;
-    gap: 0.5rem;
-    border-radius: 1rem;
-    
-  }
-  .ln{
-    background-color: #0e1e78;
-    color: #ffffff;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-  }
-  .ct{
-    background-color:#0e1e78;
-    color: #ffffff;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
   }
 }

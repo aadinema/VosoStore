@@ -39,6 +39,7 @@ const Blog = () => {
           </div>
         </div>
         <div className={styles.cardGrid}>
+          
           {cardData.map((data, index) => (
             <div className={styles.card}>
               <img src={data.image} alt={data.title} className={styles.image} />

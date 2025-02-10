@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 100vw;
+    min-height: 80vh;
+    background-color: #F8F9FC;
+    color: #ffffff;
+    padding: 2rem; /* Added padding for smaller devices */
+  }
+  
+  .bt {
+    background-color: #0A165E;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    
+  }
+  
+  .bt:hover {
+    background-color: #1e3c9c; /* Darker blue on hover */
+  }
+  
+  .heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0A165E;
+    text-align: center;
+  }
+  
+  .paragraph {
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #0A165E;
+    max-width: 80%; /* To avoid long lines on wide screens */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .heading {
+      font-size: 2.5rem;
+    }
+  
+    .paragraph {
+      font-size: 1rem;
+      max-width: 90%;
+    }
+  
+    .bt {
+      font-size: 1.25rem;
+      padding: 0.8rem 1.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 2rem;
+    }
+  
+    .paragraph {
+      font-size: 0.9rem;
+      max-width: 90%;
+    }
+  
+    .bt {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heading {
+      font-size: 1.8rem;
+    }
+  
+    .paragraph {
+      font-size: 0.85rem;
+      max-width: 90%;
+    }
+  
+    .bt {
+      font-size: 0.9rem;
+      padding: 0.7rem 1.3rem;
+    }
+  }
+  

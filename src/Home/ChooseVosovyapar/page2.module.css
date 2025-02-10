@@ -1,0 +1,175 @@
+.container{
+    width: 100vw;
+    height: auto;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+.leftContainer{
+    width: 50%;
+}
+.rightContainer{
+    width: 50%;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin: 1.5rem 1rem; 
+
+  }
+
+  .heading {
+    font-size: 3rem;
+    font-weight:600;
+    margin-bottom: 3rem;
+    color: #0A165E;
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+.icon {
+    font-size: 4rem;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    /* padding: 2rem 1rem; */
+    
+  }
+  
+  .icon:hover {
+    color: #ffffff;
+    background-color: #1e3a8a;
+    padding: 1rem 1.5rem;
+    border-radius: 20%;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    
+    font-weight: 600;
+    color: #0A165E;
+    margin: 0.5rem 0;
+  }
+  
+  .description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #64748b;
+    margin: 0.5rem 0 1rem;
+  }
+  .paragraph{
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  .btnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn{
+    background-color: #0A165E;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    border: none;
+  }
+  .btn a{
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+  }
+  
+  .learnMore {
+    font-size: 1rem;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
+  }
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+  
+    .leftContainer,
+    .rightContainer {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    .card {
+      flex-direction: column;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      text-align: center;
+    }
+  
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      width: 60px;
+      height: 60px;
+    }
+  
+    .title {
+      font-size: 1.25rem;
+    }
+  
+    .description {
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+  
+    .learnMore {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heading {
+      font-size: 2rem;
+    }
+  
+    .card {
+      padding: 1rem;
+    }
+  
+    .icon {
+      font-size: 2.5rem;
+      width: 50px;
+      height: 50px;
+    }
+  
+    .title {
+      font-size: 1.1rem;
+    }
+  
+    .description {
+      font-size: 0.85rem;
+    }
+  
+    .learnMore {
+      font-size: 0.85rem;
+    }
+  }
+  

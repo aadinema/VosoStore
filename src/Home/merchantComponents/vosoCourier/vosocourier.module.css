@@ -1,0 +1,141 @@
+/* 
+.categories {
+    background-color: #f8f9fc;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .categoriesUl {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .categoriesUl li {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #0a165e;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  .categoriesTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+  .categoriesUl span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0a165e;
+  } */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.categories {
+  background-color: #f8f9fc;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%; /* Full width by default */
+  max-width: 500px; /* Maximum width for larger screens */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem auto; /* Center the container */
+  
+}
+.categoriesTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0a165e;
+  margin-bottom: 1.5rem;
+  text-align: center; /* Center the title */
+}
+
+.categoriesUl {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  gap: 1.5rem;
+  /* padding-left: 0; */
+}
+
+.categoriesUl li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.categoriesUl a {
+  text-decoration: none;
+  color: #0a165e;
+  font-size: 1.1rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.categoriesUl a:hover {
+  color: #1a73e8; /* Change color on hover */
+}
+
+.categoriesUl svg {
+  font-size: 1.4rem; /* Adjust icon size */
+  color: #1a1a2e; /* Icon color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .categories {
+    padding: 15px; /* Reduce padding for smaller screens */
+    max-width: 100%; /* Full width on smaller screens */
+  }
+
+  .categoriesTitle {
+    font-size: 1.5rem; /* Smaller font size for smaller screens */
+  }
+
+  .categoriesUl a {
+    font-size: 1rem; /* Smaller font size for links */
+  }
+
+  .categoriesUl svg {
+    font-size: 1.2rem; /* Smaller icon size */
+  }
+}
+
+@media (max-width: 480px) {
+  .categories {
+    padding: 10px; /* Further reduce padding for very small screens */
+  }
+
+  .categoriesTitle {
+    font-size: 1.3rem; /* Even smaller font size */
+  }
+
+  .categoriesUl a {
+    font-size: 0.9rem; /* Smaller font size for links */
+  }
+
+  .categoriesUl svg {
+    font-size: 1rem; /* Smaller icon size */
+  }
+
+  .categoriesUl {
+    gap: 1rem; /* Reduce gap between list items */
+  }
+}

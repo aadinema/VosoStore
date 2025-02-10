@@ -1,0 +1,85 @@
+/* Main container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  background-color: #0e1c70;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.subtitle2 {
+  margin: 0 0.5rem;
+  
+}
+
+/* Map container styles */
+.mapContainer {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .container {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .mapContainer {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .mapContainer {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .mapContainer {
+    height: 35vh;
+  }
+}

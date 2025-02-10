@@ -1,0 +1,134 @@
+.carouselContainer {
+  padding: 2rem;
+  background-color: #f9fafb;
+  text-align: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight:600;
+  margin-bottom: 3rem;
+  color: #0A165E;
+}
+
+.cardWrapper {
+  padding: 0 10px; /* Adjust horizontal spacing between cards */
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin: 0 1rem; 
+ /* transition: transform 0.3s ease, box-shadow 0.3s ease;  */
+}
+
+.icon {
+  font-size: 3rem;
+  color: #1e3a8a;
+  margin-bottom: 4rem;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  /* margin-left: 7rem; */
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  color: #ffffff;
+  background-color: #1e3a8a;
+  padding: 1rem;
+  border-radius: 20%;
+}
+
+.title {
+  font-size: 1.25rem;
+  
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0.5rem 0;
+}
+
+.description {
+  font-size: 1rem;
+  
+  line-height: 1.5rem;
+  color: #64748b;
+  margin: 0.5rem 0 1rem;
+}
+
+.learnMore {
+  font-size: 1rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;
+}
+
+.learnMore:hover {
+  /* text-decoration: underline; */
+  transform: translateX(1rem);
+}
+
+/* Slick carousel dots styles */
+.slick-dots li button:before {
+  color: #2563eb;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #1e3a8a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+}
