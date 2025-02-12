@@ -8,16 +8,63 @@
   padding: 0;
   font-family: "Sora", sans-serif;
 }
-
+/* 
 html,
 body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  
 }
 
-.container {
+.container, 
+.secondContainer, 
+.ThirdContainer {
   max-width: 100%;
-  overflow-x: hidden; /* Prevent overflow within container */
+  overflow-x: hidden; 
 }
+
+.container, .secondContainer, .ThirdContainer {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+
+/* Ensure no horizontal scrolling */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Remove horizontal scrolling */
+  overflow-y: auto;
+}
+
+/* Ensure all containers do not exceed viewport width */
+.container, 
+.secondContainer, 
+.ThirdContainer {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent images from causing overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix flex elements wrapping to prevent overflow */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Ensure sections do not exceed width */
+section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+

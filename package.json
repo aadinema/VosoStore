@@ -17,6 +17,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-slick": "^0.30.3",
     "react-tsparticles": "^2.12.2",
+    "reactjs-popup": "^2.0.6",
     "remixicon": "^4.6.0",
     "slick-carousel": "^1.8.1",
     "tsparticles": "^3.8.1"

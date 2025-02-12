@@ -5,24 +5,37 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import styles from "./Navigation.module.css";
-import { IoMdArrowDroprightCircle } from "react-icons/io";
+import { IoMdArrowDropdownCircle } from "react-icons/io";
+import Popup from "@/app/ScheduleBtPopup/PopupModel";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown
+  const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
   const pathname = usePathname(); // Get current route
 
   // Toggle nested dropdown
   const toggleDropdown = (dropdownName) => {
+    console.log("ggg", dropdownName);
+
     setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
   };
+
+  const closeMenu = () => {
+    setOpenDropdown(null);
+  };
+
+  // // Close mobile menu when a link is clicked
+  // const closeMenu = () => {
+  //   setIsMenuOpen(false);
+  // };
 
   return (
     <header className={styles.navbar}>
       {/* Main Navbar */}
       <div className={styles.mainNavbar}>
         <div className={styles.logo}>
-          <Link href="/">
+          <Link href="/" onClick={closeMenu}>
             <Image
               src="/images/vosostorelogo.png"
               alt="logo"
@@ -50,6 +63,7 @@ const Navigation = () => {
                 className={
                   pathname === "/" ? styles.activeLink : styles.navLink
                 }
+                onClick={closeMenu}
               >
                 Home
               </Link>
@@ -62,6 +76,7 @@ const Navigation = () => {
                 className={
                   pathname === "/aboutUs" ? styles.activeLink : styles.navLink
                 }
+                onClick={closeMenu}
               >
                 About Us
               </Link>
@@ -73,7 +88,10 @@ const Navigation = () => {
                 className={styles.navLink}
                 onClick={() => toggleDropdown("services")}
               >
-                Services
+                Services{" "}
+                <i>
+                  <IoMdArrowDropdownCircle />
+                </i>
               </span>
               <ul
                 className={`${styles.dropdown} ${
@@ -86,7 +104,10 @@ const Navigation = () => {
                     className={styles.navLink}
                     onClick={() => toggleDropdown("shopping")}
                   >
-                    Shopping <IoMdArrowDroprightCircle />
+                    Shopping{" "}
+                    <i>
+                      <IoMdArrowDropdownCircle />
+                    </i>
                   </span>
                   <ul
                     className={`${styles.nestedDropdown} ${
@@ -106,13 +127,8 @@ const Navigation = () => {
                         <Link
                           href={`/shopping/${item.replace(/ /g, "-")}`}
                           className={styles.navLink}
+                          onClick={closeMenu}
                         >
-                          {/* <Link
-                          href={`/shopping/${item
-                            .toLowerCase()
-                            .replace(/ /g, "-")}`}
-                          className={styles.navLink}
-                        > */}
                           {item}
                         </Link>
                       </li>
@@ -121,12 +137,15 @@ const Navigation = () => {
                 </li>
 
                 {/* Domestic Travel Booking Nested Dropdown */}
-                <li className={styles.navItem}>
+                <li c lassName={styles.navItem}>
                   <span
                     className={styles.navLink}
                     onClick={() => toggleDropdown("domestic-travel")}
                   >
-                    Domestic Travel Booking <IoMdArrowDroprightCircle />
+                    Domestic Travel Booking{" "}
+                    <i>
+                      <IoMdArrowDropdownCircle />
+                    </i>
                   </span>
                   <ul
                     className={`${styles.nestedDropdown} ${
@@ -144,8 +163,8 @@ const Navigation = () => {
                       <li key={item}>
                         <Link
                           href={`/${item.replace(/ /g, "-")}`}
-                          // href={`/domestic-travel/${item.replace(/ /g, "-")}`}
                           className={styles.navLink}
+                          onClick={closeMenu}
                         >
                           {item}
                         </Link>
@@ -180,6 +199,7 @@ const Navigation = () => {
                           ? styles.activeLink
                           : styles.navLink
                       }
+                      onClick={closeMenu}
                     >
                       {service.replace(/-/g, " ")}
                     </Link>
@@ -190,7 +210,12 @@ const Navigation = () => {
 
             {/* Voso Courier */}
             <li className={styles.navItem}>
-              <span className={styles.navLink}>voso courier</span>
+              <span className={styles.navLink}>
+                voso courier{" "}
+                <i>
+                  <IoMdArrowDropdownCircle />
+                </i>
+              </span>
               <ul className={styles.dropdown}>
                 {["Merchant-solutions", "Partner-solutions"].map((blog) => (
                   <li key={blog}>
@@ -201,6 +226,7 @@ const Navigation = () => {
                           ? styles.activeLink
                           : styles.navLink
                       }
+                      onClick={closeMenu}
                     >
                       {blog.replace(/-/g, " ")}
                     </Link>
@@ -211,7 +237,7 @@ const Navigation = () => {
 
             {/* Pay */}
             <li className={styles.navItem}>
-              <Link href="/Pay" className={styles.navLink}>
+              <Link href="/Pay" className={styles.navLink} onClick={closeMenu}>
                 Pay
               </Link>
             </li>
@@ -225,6 +251,7 @@ const Navigation = () => {
                     ? styles.activeLink
                     : styles.navLink
                 }
+                onClick={closeMenu}
               >
                 Voso-Vyapar
               </Link>
@@ -239,6 +266,7 @@ const Navigation = () => {
                     ? styles.activeLink
                     : styles.navLink
                 }
+                onClick={closeMenu}
               >
                 Contact Us
               </Link>
@@ -251,12 +279,20 @@ const Navigation = () => {
               className={`fas fa-search ${styles.searchIcon}`}
               aria-hidden="true"
             ></i>
-            <button className={`${styles.btn} ${styles.buttonGlow}`}>
+            <button
+              className={`${styles.btn} ${styles.buttonGlow}`}
+              onClick={() => setIsModalOpen(true)} // Open modal
+            >
               Schedule a demo
+            </button>
+            <button className={`${styles.btn} ${styles.buttonGlow}`}>
+              Store Partners Login
             </button>
           </div>
         </nav>
       </div>
+      {/* Render the modal */}
+      <Popup isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </header>
   );
 };

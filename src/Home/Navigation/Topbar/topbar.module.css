@@ -4,9 +4,10 @@
   align-items: center;
   font-size: 1rem;
   color: white;
-  background-color: #0E1E78;
+  background-color: #0A192F;
   padding: 0.8rem 1.5rem;
   flex-wrap: wrap;
+  
   /* border-bottom: 2px dashed #ffffff; */
 }
 

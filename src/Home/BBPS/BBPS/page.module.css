@@ -123,43 +123,72 @@
 }
 
 @media (max-width: 768px) {
+  .mainContainer {
+    padding: 1.5rem; /* Reduce padding for smaller screens */
+  }
+
   .container {
-    flex-direction: column; /* Stack items vertically */
-    padding: 2rem 1rem;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .tempContainer,
+  .valuesContainer {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
   }
 
   .left,
   .right {
     width: 100%;
-    text-align: center;
     padding: 1rem 0;
   }
 
+  .heading {
+    font-size: 2rem; /* Reduce heading size for mobile */
+    line-height: 2.5rem;
+    padding: 0 2rem;
+    border-bottom-width: 3px;
+  }
+
+  .subheading {
+    font-size: 1.5rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    text-align: justify;
+  }
+
   .image1 {
-    width: 90%;
+    width: 100%;
+    max-width: 300px; /* Ensure images don’t overflow */
     margin: 0 auto;
   }
 
-  .image3 {
-    display: none;
-  }
-
-  .secondaryImage {
-    display: none;
-  }
-
-  .customers {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .border {
-    border-right: none;
-    padding: 0;
+  .image2 {
+    display: none; /* Hide secondary image on small screens */
   }
 
   .primaryButton {
     width: 100%;
     margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .list li {
+    font-size: 1rem;
+  }
+
+  .number {
+    font-size: 2.5rem; /* Reduce size for better fit */
+  }
+
+  .para {
+    font-size: 0.9rem;
   }
 }

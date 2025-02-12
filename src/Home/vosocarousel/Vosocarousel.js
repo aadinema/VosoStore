@@ -12,15 +12,23 @@ const carouselData = [
     alt: "Cable TV Bill Payment",
   },
   {
-    img: "/images/ms_5.jpg",
+    img: "/images/ms_1.jpg",
     alt: "Education Fee Payment",
   },
   {
-    img: "/images/ms_5.jpg",
+    img: "/images/ms_4.jpg",
     alt: "Water Bill Payment",
   },
   {
-    img: "/images/ms_5.jpg",
+    img: "/images/ms_7.jpg",
+    alt: "Postpaid Bill Payment",
+  },
+  {
+    img: "/images/ms_9.jpg",
+    alt: "Postpaid Bill Payment",
+  },
+  {
+    img: "/images/ms_3.jpg",
     alt: "Postpaid Bill Payment",
   },
 ];
