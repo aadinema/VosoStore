@@ -37,7 +37,7 @@ const Navigation = () => {
         <div className={styles.logo}>
           <Link href="/" onClick={closeMenu}>
             <Image
-              src="/images/vosostorelogo.png"
+              src="/VosoStoreLogo.png"
               alt="logo"
               width={90}
               height={35}
@@ -275,10 +275,7 @@ const Navigation = () => {
 
           {/* Navbar Actions */}
           <div className={styles.actions}>
-            <i
-              className={`fas fa-search ${styles.searchIcon}`}
-              aria-hidden="true"
-            ></i>
+
             <button
               className={`${styles.btn} ${styles.buttonGlow}`}
               onClick={() => setIsModalOpen(true)} // Open modal
