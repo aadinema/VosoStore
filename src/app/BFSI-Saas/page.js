@@ -1,4 +1,4 @@
-import BFSISaas from '@/Home/BFSI-Saas/BFSISaas/BFSISaas'
+import BFSISaas from '@/Home/bfsi-saas/BFSISaas/BFSISaas'
 import React from 'react'
 
 const page = () => {

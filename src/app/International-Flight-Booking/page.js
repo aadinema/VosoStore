@@ -1,4 +1,4 @@
-import IFB from '@/Home/International-Flight-Booking/FlightBooking/IFB'
+import IFB from '@/Home/flight/FlightBooking/IFB'
 import React from 'react'
 
 const page = () => {

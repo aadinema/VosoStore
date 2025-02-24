@@ -1,6 +1,6 @@
-import Homepage from '@/Home/Digital-Marketing-Services/Homepage/Homepage'
-import Page2 from '@/Home/Digital-Marketing-Services/Page2/Page2'
-import Page3 from '@/Home/Digital-Marketing-Services/Page3/Page3'
+import Homepage from '@/Home/digital-marketing-services/Homepage/Homepage'
+import Page2 from '@/Home/digital-marketing-services/Page2/Page2'
+import Page3 from '@/Home/digital-marketing-services/Page3/Page3'
 import React from 'react'
 
 const page = () => {

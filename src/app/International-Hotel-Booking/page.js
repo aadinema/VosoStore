@@ -1,4 +1,4 @@
-import IHB from '@/Home/International-Hotel-Booking/HotelBooking/IHB'
+import IHB from '@/Home/hotel/HotelBooking/IHB'
 import React from 'react'
 
 const page = () => {

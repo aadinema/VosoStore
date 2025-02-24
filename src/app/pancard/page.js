@@ -1,4 +1,4 @@
-import PanCardServices from '@/Home/Pan-Card/PanCardServices'
+import PanCardServices from '@/Home/pancard/PanCardServices'
 import React from 'react'
 
 const page = () => {

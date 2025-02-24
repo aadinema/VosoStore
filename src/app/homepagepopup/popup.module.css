@@ -1,49 +1,83 @@
+/* Background overlay */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Smooth transition */
-  }
-  
-  .show {
-    opacity: 1;
-    visibility: visible;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  will-change: opacity, visibility;
+  z-index: 1000;
+}
+
+/* Show class for visibility */
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Popup container */
+.popup {
+  position: relative;
+  background: transparent;
+  /* padding: 15px; */
+  border-radius: 10px;
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); */
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image styling */
+.image {
+  width: 80vw; /* Adjust for responsiveness */
+  max-width: 400px; /* Prevents oversizing */
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Close button */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #1D4DD6;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
+}
+
+.closeButton:hover {
+  background-color: #163ba0;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
   .popup {
-    position: relative;
-    background: transparent;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    max-width: 90vw;
+    padding: 10px;
   }
-  
+
   .image {
-    width: 600px;
-    height: auto;
-    border-radius: 5px;
+    width: 90vw;
+    max-width: 320px;
   }
-  
+
   .closeButton {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    background-color: #2B120E;
-    color: #F5F5F5;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 50%;
+    font-size: 14px;
+    padding: 5px 8px;
   }
-  
+}

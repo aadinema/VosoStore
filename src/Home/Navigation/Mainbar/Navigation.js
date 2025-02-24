@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import styles from "./Navigation.module.css";
-import { IoMdArrowDropdownCircle } from "react-icons/io";
+import { IoIosArrowDown ,IoMdArrowDropdownCircle } from "react-icons/io";
 import Popup from "@/app/ScheduleBtPopup/PopupModel";
 
 const Navigation = () => {
@@ -84,9 +84,9 @@ const Navigation = () => {
             {/* About Us */}
             <li className={styles.navItem}>
               <Link
-                href="/aboutUs"
+                href="/about"
                 className={
-                  pathname === "/aboutUs" ? styles.activeLink : styles.navLink
+                  pathname === "/about" ? styles.activeLink : styles.navLink
                 }
                 onClick={closeMenu}
               >
@@ -102,7 +102,7 @@ const Navigation = () => {
               >
                 Services{" "}
                 <i>
-                  <IoMdArrowDropdownCircle />
+                  <IoIosArrowDown  />
                 </i>
               </span>
               <ul
@@ -118,7 +118,7 @@ const Navigation = () => {
                   >
                     Shopping{" "}
                     <i>
-                      <IoMdArrowDropdownCircle />
+                      <IoIosArrowDown />
                     </i>
                   </span>
                   <ul
@@ -129,19 +129,19 @@ const Navigation = () => {
                     }`}
                   >
                     {[
-                      "Amazon-Associate-Partner",
-                      "Flipkart-Associate-Partner",
-                      "Ajio-Associate-Partner",
-                      "Booking-Associate-Partner",
-                      "Nykaa-Associate-Partner",
-                    ].map((item) => (
+  { label: "Amazon Associate Partner", link: "amazon-associate-partner" },
+  { label: "Flipkart Associate Partner", link: "flipkart-associate-partner" },
+  { label: "Ajio Associate Partner", link: "ajio-associate-partner" },
+  { label: "Booking Associate Partner", link: "booking-associate-partner" },
+  { label: "Nykaa Associate Partner", link: "nykaa-associate-partner" },
+].map((item) => (
                       <li key={item}>
                         <Link
-                          href={`/shopping/${item.replace(/ /g, "-")}`}
+                          href={`/${item.link.replace(/ /g, "-")}`}
                           className={styles.navLink}
                           onClick={closeMenu}
                         >
-                          {item}
+                          {item.label}
                         </Link>
                       </li>
                     ))}
@@ -156,7 +156,7 @@ const Navigation = () => {
                   >
                     Domestic Travel Booking{" "}
                     <i>
-                      <IoMdArrowDropdownCircle />
+                      <IoIosArrowDown />
                     </i>
                   </span>
                   <ul
@@ -167,18 +167,18 @@ const Navigation = () => {
                     }`}
                   >
                     {[
-                      "Bus-Tickets-Booking",
-                      "Flight-Tickets-Booking",
-                      "Hotel-Booking",
-                      "Rail-Tickets-Booking",
-                    ].map((item) => (
+  { label: "Bus Tickets Booking", link: "bus-booking" },
+  { label: "Flight Tickets Booking", link: "flight" },
+  { label: "Hotel Booking", link: "hotel" },
+  { label: "Rail Tickets Booking", link: "rail-booking" },
+].map((item) => (
                       <li key={item}>
                         <Link
-                          href={`/${item.replace(/ /g, "-")}`}
+                          href={`/${item.link.replace(/ /g, "-")}`}
                           className={styles.navLink}
                           onClick={closeMenu}
                         >
-                          {item}
+                          {item.label}
                         </Link>
                       </li>
                     ))}
@@ -187,33 +187,33 @@ const Navigation = () => {
 
                 {/* Other Services */}
                 {[
-                  "Courier-Service",
-                  "Bill Payments",
-                  "Insurance",
-                  "ONDC",
-                  "Software-solution-Fintech",
-                  "Aadhar-Enabled-Payments-System",
-                  "BBPS",
-                  "mATM(Micro-ATM-transactions)",
-                  "Domestic-Money-Transfer(DMT)",
-                  "Prepaid-Recharges",
-                  "International-Flight-Booking",
-                  "International-Hotel-Booking",
-                  "Pan-Card",
-                  "BFSI-Saas",
-                  "Digital-Marketing-Services",
-                ].map((service) => (
-                  <li key={service}>
+  { label: "Courier Service", link: "courier-service" },
+  { label: "Bill Payments", link: "bill-payments" },
+  { label: "Insurance", link: "insurance" },
+  { label: "ONDC", link: "ondc" },
+  { label: "Software Solution - Fintech", link: "software-solution-saas" },
+  { label: "Aadhar Enabled Payments System", link: "aeps" },
+  { label: "BBPS", link: "bill-payment" },
+  { label: "mATM (Micro ATM Transactions)", link: "matm-micro-atm-transactions" },
+  { label: "Domestic Money Transfer (DMT)", link: "domestic-money-transfer" },
+  { label: "Prepaid Recharges", link: "prepaid-recharges" },
+  { label: "International Flight Booking", link: "flight" },
+  { label: "International Hotel Booking", link: "hotel" },
+  { label: "Pan Card", link: "pancard" },
+  { label: "BFSI SaaS", link: "bfsi-saas" },
+  { label: "Digital Marketing Services", link: "digital-marketing-services" },
+].map((service) => (
+                  <li key={service.label}>
                     <Link
-                      href={`/${service}`}
+                      href={`/${service.link}`}
                       className={
-                        pathname === `/${service}`
+                        pathname === `/${service.link}`
                           ? styles.activeLink
                           : styles.navLink
                       }
                       onClick={closeMenu}
                     >
-                      {service.replace(/-/g, " ")}
+                      {service.label.replace(/-/g, " ")}
                     </Link>
                   </li>
                 ))}
@@ -228,7 +228,7 @@ const Navigation = () => {
               >
                 voso courier{" "}
                 <i>
-                  <IoMdArrowDropdownCircle />
+                  <IoIosArrowDown />
                 </i>
               </span>
               <ul
@@ -236,7 +236,7 @@ const Navigation = () => {
                   openDropdown === "voso-courier" ? styles.dropdownOpen : ""
                 }`}
               >
-                {["Merchant-solutions", "Partner-solutions"].map((blog) => (
+                {["merchant-solutions", "partner-solutions"].map((blog) => (
                   <li key={blog}>
                     <Link
                       href={`/${blog}`}
@@ -279,9 +279,9 @@ const Navigation = () => {
             {/* Contact Us */}
             <li className={styles.navItem}>
               <Link
-                href="/Contact-Us"
+                href="/contact-us"
                 className={
-                  pathname === "/Contact-Us"
+                  pathname === "/contact-us"
                     ? styles.activeLink
                     : styles.navLink
                 }
@@ -292,9 +292,9 @@ const Navigation = () => {
             </li>
             <li className={styles.navItem}>
               <Link
-                href="/Career"
+                href="/career"
                 className={
-                  pathname === "/Career" ? styles.activeLink : styles.navLink
+                  pathname === "/career" ? styles.activeLink : styles.navLink
                 }
                 onClick={closeMenu}
               >
