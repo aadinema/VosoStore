@@ -11,7 +11,7 @@ const Footer = () => {
         <div className={styles.section}>
           <Link href="/">
             <Image
-              src="/VosoStoreLogo.png"
+              src="/vosologo/vosostorelogo.png"
               alt="logo"
               width={90}
               height={35}
@@ -67,7 +67,7 @@ const Footer = () => {
             <li className>Bill Payments</li>
             <li>
               <a href="/Prepaid-Recharges">Prepaid Recharge</a>
-              </li>
+            </li>
             <li>Domestic Money Transfer</li>
             <li>Online Shopping</li>
             <li>Travel Booking</li>
@@ -76,7 +76,7 @@ const Footer = () => {
             </li>
             <li>
               <a href="/Insurance">Insurance</a>
-              </li>
+            </li>
           </ul>
         </div>
 

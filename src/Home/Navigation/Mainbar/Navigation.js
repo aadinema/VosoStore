@@ -49,7 +49,7 @@ const Navigation = () => {
         <div className={styles.logo}>
           <Link href="/" onClick={closeMenu}>
             <Image
-              src="/VosoStoreLogo.png"
+              src="/vosologo/vosostorelogo.png"
               alt="logo"
               width={90}
               height={35}
