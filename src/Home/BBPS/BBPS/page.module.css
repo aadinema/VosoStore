@@ -122,7 +122,7 @@
   font-size: 1.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width:853px) {
   .mainContainer {
     padding: 1.5rem; /* Reduce padding for smaller screens */
   }
@@ -158,15 +158,19 @@
   }
 
   .paragraph {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.5rem;
     text-align: justify;
+
   }
 
   .image1 {
     width: 100%;
-    max-width: 300px; /* Ensure images don’t overflow */
+    max-width: 800px; /* Ensure images don’t overflow */
     margin: 0 auto;
+  }
+  .image3{
+    display: none;
   }
 
   .image2 {
@@ -190,5 +194,6 @@
 
   .para {
     font-size: 0.9rem;
+    
   }
 }

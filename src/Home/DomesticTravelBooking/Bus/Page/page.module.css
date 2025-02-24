@@ -121,11 +121,15 @@
 .list li > i {
   font-size: 1.5rem;
 }
-
-@media (max-width: 768px) {
+/* increase max width  */
+@media (max-width: 853px) {
+  .mainContainer{
+    padding: 0 1rem;
+  }
   .container {
     flex-direction: column; /* Stack items vertically */
     padding: 2rem 1rem;
+    text-align: center;
   }
 
   .left,
