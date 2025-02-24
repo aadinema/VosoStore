@@ -83,10 +83,19 @@
   padding: 0 1rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 853px) {
+  .mainContainer{
+    padding: 0;
+  }
   .container {
     flex-direction: column;
-    text-align: center;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .image1{
+    max-width: 800px;
   }
 
   .left,
@@ -97,5 +106,9 @@
   .primaryButton {
     width: 100%;
     margin-top: 1rem;
+  }
+  .miniheading, .miniparagraph{
+    text-align: center;
+    padding: 0;
   }
 }

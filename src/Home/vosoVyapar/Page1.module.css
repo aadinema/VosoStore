@@ -70,7 +70,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 853px) {
   .container {
     flex-direction: column;
     padding-bottom: 1rem;
@@ -89,32 +89,43 @@
   }
 
   .heading {
-    font-size: 2rem;
-    line-height: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-decoration: underline;
   }
 
   .subhead {
     font-size: 2rem;
     margin-bottom: 1.5rem;
+    
   }
 
   .subParagraph {
     font-size: 2rem;
-    line-height: 1.5rem;
-    margin-bottom: 1.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    word-spacing: normal;
+    letter-spacing: normal;
+  
   }
 
   .primaryButton,
   .secondaryButton {
-    padding: 0.8rem 1.2rem;
+    padding: 1rem 1.2rem;
     font-size: 0.9rem;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   .image {
     width: 80%;
     margin-top: 2rem;
+  }
+  .imageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -125,6 +136,7 @@
 
   .subhead {
     font-size: 1rem;
+    
   }
 
   .subParagraph {
@@ -140,5 +152,10 @@
 
   .image {
     width: 90%;
+  }
+  .imageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

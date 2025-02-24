@@ -38,6 +38,7 @@ html, body {
   height: 100%;
   overflow-x: hidden; /* Remove horizontal scrolling */
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 /* Ensure all containers do not exceed viewport width */

@@ -43,7 +43,7 @@ const Footer = () => {
           <h3 className={styles.title}>Quick Links</h3>
           <ul className={styles.list}>
             <li>
-              <a href="#">About Us</a>
+              <a href="/aboutUs">About Us</a>
             </li>
             <li>
               <a href="#">Become VOSO Store Partner</a>
@@ -55,7 +55,7 @@ const Footer = () => {
               <a href="#">Blogs</a>
             </li>
             <li>
-              <a href="#">Contact Us</a>
+              <a href="/Contact-Us">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -65,12 +65,18 @@ const Footer = () => {
           <h3 className={styles.title}>Services</h3>
           <ul className={styles.list}>
             <li className>Bill Payments</li>
-            <li>Prepaid Recharge</li>
+            <li>
+              <a href="/Prepaid-Recharges">Prepaid Recharge</a>
+              </li>
             <li>Domestic Money Transfer</li>
             <li>Online Shopping</li>
             <li>Travel Booking</li>
-            <li>Pan Card</li>
-            <li>Insurance</li>
+            <li>
+              <a href="/Pan-Card">Pan Card</a>
+            </li>
+            <li>
+              <a href="/Insurance">Insurance</a>
+              </li>
           </ul>
         </div>
 

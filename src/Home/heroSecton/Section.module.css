@@ -166,10 +166,11 @@
 }
 
 /* Responsive Styles for Small Screens */
-@media (max-width: 768px) {
+@media (max-width: 853px) {
   .container {
     flex-direction: column; /* Stack sections vertically */
     height: auto; /* Adjust height */
+    
   }
 
   .main-section {

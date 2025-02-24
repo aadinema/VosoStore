@@ -1,0 +1,145 @@
+.careerContainer {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #141d5c;
+  }
+  
+  .breadcrumb {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+
+  .homeLink {
+    text-decoration: none;
+    color: #141d5c;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .homeLink:hover {
+    color: #ffc107;
+  }
+  
+  
+  .headerSection {
+    text-align: left;
+  }
+  
+  .subTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #141d5c;
+    margin-bottom: 20px;
+  }
+  
+  .categories {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .categoryButton {
+    background: #ffc107;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .categoryButton.active {
+    background: #141d5c;
+    color: white;
+  }
+  
+  .jobList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .jobCard {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .jobCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .jobCard h3 {
+    font-size: 1.2rem;
+    color: #141d5c;
+    margin-bottom: 10px;
+  }
+  
+  .jobCard p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .jobMeta {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  
+  .detailsButton {
+    background: #ffc107;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .detailsButton:hover {
+    background: #141d5c;
+    color: white;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .careerContainer {
+      padding: 15px;
+    }
+  
+    .subTitle {
+      font-size: 1.3rem;
+    }
+  
+    .categoryButton {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  
+    .jobCard {
+      padding: 15px;
+    }
+  
+    .jobCard h3 {
+      font-size: 1rem;
+    }
+  
+    .jobMeta {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+  

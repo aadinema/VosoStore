@@ -11,24 +11,36 @@ import Popup from "@/app/ScheduleBtPopup/PopupModel";
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown
+  const [openNestedDropdown, setOpenNestedDropdown] = useState(null); // Track open nested dropdown
   const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
   const pathname = usePathname(); // Get current route
 
-  // Toggle nested dropdown
+  // Toggle dropdown
   const toggleDropdown = (dropdownName) => {
-    console.log("ggg", dropdownName);
-
-    setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
+    if (openDropdown === dropdownName) {
+      setOpenDropdown(null); // Close dropdown if it's already open
+      setOpenNestedDropdown(null); // Close nested dropdown as well
+    } else {
+      setOpenDropdown(dropdownName); // Open the clicked dropdown
+      setOpenNestedDropdown(null); // Close any open nested dropdown
+    }
   };
 
+  // Toggle nested dropdown
+  const toggleNestedDropdown = (nestedDropdownName) => {
+    if (openNestedDropdown === nestedDropdownName) {
+      setOpenNestedDropdown(null); // Close nested dropdown if it's already open
+    } else {
+      setOpenNestedDropdown(nestedDropdownName); // Open the clicked nested dropdown
+    }
+  };
+
+  // Close all dropdowns and menu
   const closeMenu = () => {
+    setIsMenuOpen(false);
     setOpenDropdown(null);
+    setOpenNestedDropdown(null);
   };
-
-  // // Close mobile menu when a link is clicked
-  // const closeMenu = () => {
-  //   setIsMenuOpen(false);
-  // };
 
   return (
     <header className={styles.navbar}>
@@ -102,7 +114,7 @@ const Navigation = () => {
                 <li className={styles.navItem}>
                   <span
                     className={styles.navLink}
-                    onClick={() => toggleDropdown("shopping")}
+                    onClick={() => toggleNestedDropdown("shopping")}
                   >
                     Shopping{" "}
                     <i>
@@ -111,7 +123,7 @@ const Navigation = () => {
                   </span>
                   <ul
                     className={`${styles.nestedDropdown} ${
-                      openDropdown === "shopping"
+                      openNestedDropdown === "shopping"
                         ? styles.nestedDropdownOpen
                         : ""
                     }`}
@@ -137,10 +149,10 @@ const Navigation = () => {
                 </li>
 
                 {/* Domestic Travel Booking Nested Dropdown */}
-                <li c lassName={styles.navItem}>
+                <li className={styles.navItem}>
                   <span
                     className={styles.navLink}
-                    onClick={() => toggleDropdown("domestic-travel")}
+                    onClick={() => toggleNestedDropdown("domestic-travel")}
                   >
                     Domestic Travel Booking{" "}
                     <i>
@@ -149,7 +161,7 @@ const Navigation = () => {
                   </span>
                   <ul
                     className={`${styles.nestedDropdown} ${
-                      openDropdown === "domestic-travel"
+                      openNestedDropdown === "domestic-travel"
                         ? styles.nestedDropdownOpen
                         : ""
                     }`}
@@ -210,13 +222,20 @@ const Navigation = () => {
 
             {/* Voso Courier */}
             <li className={styles.navItem}>
-              <span className={styles.navLink}>
+              <span
+                className={styles.navLink}
+                onClick={() => toggleDropdown("voso-courier")}
+              >
                 voso courier{" "}
                 <i>
                   <IoMdArrowDropdownCircle />
                 </i>
               </span>
-              <ul className={styles.dropdown}>
+              <ul
+                className={`${styles.dropdown} ${
+                  openDropdown === "voso-courier" ? styles.dropdownOpen : ""
+                }`}
+              >
                 {["Merchant-solutions", "Partner-solutions"].map((blog) => (
                   <li key={blog}>
                     <Link
@@ -271,11 +290,23 @@ const Navigation = () => {
                 Contact Us
               </Link>
             </li>
+            <li className={styles.navItem}>
+              <Link
+                href="/Career"
+                className={
+                  pathname === "/Career"
+                    ? styles.activeLink
+                    : styles.navLink
+                }
+                onClick={closeMenu}
+              >
+                Career
+              </Link>
+            </li>
           </ul>
 
           {/* Navbar Actions */}
           <div className={styles.actions}>
-
             <button
               className={`${styles.btn} ${styles.buttonGlow}`}
               onClick={() => setIsModalOpen(true)} // Open modal

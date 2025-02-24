@@ -124,8 +124,8 @@
 .list li > i {
   font-size: 1.5rem;
 }
-
-@media (max-width: 768px) {
+/* instead of 768 we use  853px */
+@media (max-width: 853px) {
   .container {
     flex-direction: column; /* Stack items vertically */
     flex-wrap: wrap;

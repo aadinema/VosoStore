@@ -6,9 +6,6 @@ const vosoVyapar = () => {
     <>
       <div className={styles.container}>
         <div className={styles.left}>
-          {/* <h5 className={styles.subhead}>
-            We provide professional IT services
-          </h5> */}
           <h1 className={styles.heading}>
             Boost Your Business with Digital Presence
           </h1>
