@@ -87,7 +87,7 @@
 /* Targeting the icon */
 .navLink i {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 0.5rem;
   transition: transform 0.3s ease-in-out; /* Smooth rotation */
 }
 
@@ -210,9 +210,60 @@
   box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
   transform: translateY(0em);
 }
+/* Responsive Styles for 1024px to 1300px */
+@media (min-width: 1024px) and (max-width: 1300px) {
+  /* Navbar Base Styles */
+  .navbar {
+    padding: 0.8rem 0; /* Slightly reduce padding */
+  }
+
+  /* Main Navbar */
+  .mainNavbar {
+    padding: 1rem; /* Reduce padding */
+    margin: 0 1.5rem; /* Adjust margin */
+  }
+
+  /* Logo */
+  .logo {
+    font-size: 1.8rem; /* Slightly reduce font size */
+    margin-right: 0.5rem; /* Adjust margin */
+  }
+
+  /* Menu */
+  .menu {
+    gap: 1rem; /* Reduce gap between menu items */
+  }
+
+  /* Nav List */
+  .navList {
+    gap: 1rem; /* Reduce gap between nav items */
+  }
+
+  /* Nav Link */
+  .navLink {
+    font-size: 0.75rem; /* Slightly reduce font size */
+  }
+
+  /* Dropdown */
+  .dropdown {
+    padding-right: 6rem; /* Reduce padding */
+  }
+
+  /* Actions */
+  .actions {
+    gap: 1rem; /* Reduce gap between action items */
+    margin-right: 1.5rem; /* Adjust margin */
+  }
+
+  /* Button */
+  .btn {
+    font-size: 0.5rem; /* Slightly reduce font size */
+    padding: 0.4rem 0.5rem; /* Adjust padding */
+  }
+}
 
 /* Mobile Styles instead of 768 we use 853*/
-@media (max-width: 953px) {
+@media (max-width: 1024px) {
   .mainNavbar {
     margin: 0 1rem;
     padding: 1rem;
@@ -255,9 +306,9 @@
 
   .navLink {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0.8rem;
+    padding: 0.5rem;
     width: 100%;
   }
 
@@ -301,6 +352,7 @@
 
   .navLink i {
     transition: transform 0.3s ease;
+  
   }
 
   .navLink.active i {
