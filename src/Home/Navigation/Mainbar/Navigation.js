@@ -294,9 +294,7 @@ const Navigation = () => {
               <Link
                 href="/Career"
                 className={
-                  pathname === "/Career"
-                    ? styles.activeLink
-                    : styles.navLink
+                  pathname === "/Career" ? styles.activeLink : styles.navLink
                 }
                 onClick={closeMenu}
               >
