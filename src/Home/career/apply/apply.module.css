@@ -1,0 +1,134 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  background-color: #f5f5f5; /* Light background for better contrast */
+}
+
+.infoSection {
+  max-width: 300px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Consistent shadow with form */
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a237e; /* Deep blue for headings */
+  margin-bottom: 1rem;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #757575; /* Gray for breadcrumb */
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #ff9800; /* Orange for highlighted text */
+  font-weight: bold;
+}
+
+.subheading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #1a237e; /* Deep blue for subheadings */
+}
+
+.email {
+  font-size: 0.9rem;
+  color: #1a237e; /* Deep blue for email */
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.email::before {
+  content: "✉ ";
+  color: #ff9800; /* Orange for email icon */
+}
+
+.formSection {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+  width: 400px;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #1a237e; /* Deep blue for form title */
+}
+
+.formSection label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #333; /* Dark gray for labels */
+}
+
+.formSection input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333; /* Dark gray for input text */
+}
+
+.formSection input[type="file"] {
+  padding: 0.5rem;
+}
+
+.formSection input:disabled {
+  background: #f5f5f5; /* Light gray for disabled input */
+  color: #757575; /* Gray for disabled text */
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
+  background: #1a237e; /* Deep blue for button */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease; /* Smooth hover transition */
+}
+
+.submitBtn:hover {
+  background: #283593; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .infoSection {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .formSection {
+    width: 100%;
+    max-width: 100%;
+  }
+}

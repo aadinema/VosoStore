@@ -1,61 +1,77 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link"; 
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import styles from "./career.module.css";
 
-const jobs = [
-  {
-    id: 1,
-    category: "Technical",
-    title: "IT Sales Executive",
-    description:
-      "For an IT Sales Business Development Executive role, the candidate is responsible for driving sales growth...",
-    location: "Indore",
-    type: "Full Time",
-    experience: "3 Years",
-  },
-  {
-    id: 2,
-    category: "Technical",
-    title: "Product Manager",
-    description:
-      "We are a fintech company, and looking for a Product Manager to drive new payment solutions...",
-    location: "Indore",
-    type: "Full Time",
-    experience: "5+ Years",
-  },
-  {
-    id: 3,
-    category: "Marketing",
-    title: "Digital Marketing Specialist",
-    description:
-      "We are looking for an experienced Digital Marketing Specialist to manage and strategize our online campaigns...",
-    location: "Remote",
-    type: "Full Time",
-    experience: "2+ Years",
-  },
-  {
-    id: 4,
-    category: "Design",
-    title: "UI/UX Designer",
-    description:
-      "We are seeking a talented UI/UX designer to improve user experience across our platforms...",
-    location: "Bangalore",
-    type: "Full Time",
-    experience: "3+ Years",
-  },
-];
-
 const Career = () => {
-  const [activeCategory, setActiveCategory] = useState("Technical");
+  const [jobs, setJobs] = useState([]);
+  const [departments, setDepartments] = useState([]);
+  const [activeCategory, setActiveCategory] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const router = useRouter();
 
-  const categories = ["Technical", "Marketing", "Design"];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+
+        // Fetch jobs
+        const jobsResponse = await fetch(
+          "https://quintustech-backend.vercel.app/api/job/getAll"
+        );
+        const jobsData = await jobsResponse.json();
+
+        // Fetch departments
+        const deptResponse = await fetch(
+          "https://quintustech-backend.vercel.app/api/job/getAllDepartment"
+        );
+        const deptData = await deptResponse.json();
+
+        // Handle jobs data
+        if (jobsData?.success && Array.isArray(jobsData.data)) {
+          setJobs(jobsData.data);
+        } else {
+          throw new Error("Invalid jobs data format");
+        }
+
+        // Handle departments data
+        if (deptData?.success && Array.isArray(deptData.data)) {
+          const departmentNames = deptData.data.map(
+            (dept) => dept.departmentName
+          );
+          setDepartments(departmentNames);
+          setActiveCategory(departmentNames[0] || "");
+        } else {
+          throw new Error("Invalid departments data format");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleViewDetails = (jobId) => {
+    router.push(`/career/${jobId}`);
+  };
+
+  if (loading) {
+    return <div className={styles.loading}>Loading careers...</div>;
+  }
+
+  if (error) {
+    return <div className={styles.error}>Error: {error}</div>;
+  }
 
   return (
     <div className={styles.careerContainer}>
       <h1 className={styles.title}>Career</h1>
-
-      {/* Breadcrumb with Link */}
       <p className={styles.breadcrumb}>
         <Link href="/" className={styles.homeLink}>
           Home
@@ -65,37 +81,45 @@ const Career = () => {
 
       <section className={styles.headerSection}>
         <h2 className={styles.subTitle}>Career / Job Opportunities</h2>
-
         <div className={styles.categories}>
-          {categories.map((category) => (
+          {departments.map((department) => (
             <button
-              key={category}
+              key={department}
               className={`${styles.categoryButton} ${
-                activeCategory === category ? styles.active : ""
+                activeCategory === department ? styles.active : ""
               }`}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => setActiveCategory(department)}
             >
-              {category}
+              {department}
             </button>
           ))}
         </div>
       </section>
 
       <div className={styles.jobList}>
-        {jobs
-          .filter((job) => job.category === activeCategory)
-          .map((job) => (
-            <div key={job.id} className={styles.jobCard}>
-              <h3>{job.title}</h3>
-              <p>{job.description}</p>
-              <div className={styles.jobMeta}>
-                <span>📍 {job.location}</span>
-                <span>⏳ {job.type}</span>
-                <span>💼 {job.experience}</span>
+        {jobs.length > 0 ? (
+          jobs
+            .filter((job) => job.department === activeCategory)
+            .map((job) => (
+              <div key={job._id} className={styles.jobCard}>
+                <h3>{job.title}</h3>
+                <p>{job.description}</p>
+                <div className={styles.jobMeta}>
+                  <span>📍 {job.location}</span>
+                  <span>⏳ {job.employmentType}</span>
+                  <span>💼 {job.experience}</span>
+                </div>
+                <button
+                  className={styles.detailsButton}
+                  onClick={() => router.push(`/career/${job.slug}`)} // Use job.slug from API
+                >
+                  View Details
+                </button>
               </div>
-              <button className={styles.detailsButton}>View Details</button>
-            </div>
-          ))}
+            ))
+        ) : (
+          <p className={styles.noJobs}>No current openings in this category</p>
+        )}
       </div>
     </div>
   );
