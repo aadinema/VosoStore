@@ -64,21 +64,6 @@ const Footer = () => {
         <div className={styles.section}>
           <h3 className={styles.title}>Services</h3>
           <ul className={styles.list}>
-<<<<<<< HEAD
-            <li className>Bill Payments</li>
-            <li>
-              <a href="/Prepaid-Recharges">Prepaid Recharge</a>
-            </li>
-            <li>Domestic Money Transfer</li>
-            <li>Online Shopping</li>
-            <li>Travel Booking</li>
-            <li>
-              <a href="/Pan-Card">Pan Card</a>
-            </li>
-            <li>
-              <a href="/Insurance">Insurance</a>
-            </li>
-=======
             <li className={styles.listItem}>
               <Link href="/Bill-Payments">Bill Payments</Link>
             </li>
@@ -86,7 +71,9 @@ const Footer = () => {
               <Link href="/Prepaid-Recharges">Prepaid Recharge</Link>
             </li>
             <li className={styles.listItem}>
-              <Link href="/Domestic-Money-Transfer">Domestic Money Transfer</Link>
+              <Link href="/Domestic-Money-Transfer">
+                Domestic Money Transfer
+              </Link>
             </li>
             <li className={styles.listItem}>
               <Link href="/Online-Shopping">Online Shopping</Link>
@@ -100,7 +87,6 @@ const Footer = () => {
             <li className={styles.listItem}>
               <Link href="/Insurance">Insurance</Link>
             </li>
->>>>>>> e45d1d8 (update vosostore)
           </ul>
         </div>
 
