@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
   gap: 2rem;
   padding: 2rem;
@@ -9,24 +9,29 @@
 }
 
 .infoSection {
-  max-width: 300px;
+  max-width: 400px;
   background: #fff;
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Consistent shadow with form */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .title {
   font-size: 2rem;
   font-weight: bold;
   color: #1a237e; /* Deep blue for headings */
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .breadcrumb {
   font-size: 0.9rem;
   color: #757575; /* Gray for breadcrumb */
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .highlight {
@@ -37,15 +42,16 @@
 .subheading {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 1rem;
+  /* margin-top: 1rem 0; */
+  /* padding: 1rem 0; */
   color: #1a237e; /* Deep blue for subheadings */
 }
 
 .email {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #1a237e; /* Deep blue for email */
   font-weight: bold;
-  margin-top: 0.5rem;
+  /* margin-top: 0.8rem; */
 }
 
 .email::before {
@@ -59,7 +65,7 @@
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Consistent shadow */
-  width: 400px;
+  width: 600px;
 }
 
 .formTitle {
@@ -81,10 +87,11 @@
   width: 100%;
   padding: 0.75rem;
   margin-top: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #283593;
   border-radius: 4px;
   font-size: 1rem;
-  color: #333; /* Dark gray for input text */
+  color: #000; /* Dark gray for input text */
+  outline-color: #1a237e;
 }
 
 .formSection input[type="file"] {
@@ -107,7 +114,7 @@
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease; /* Smooth hover transition */
+  transition: background 0.5s ease; /* Smooth hover transition */
 }
 
 .submitBtn:hover {

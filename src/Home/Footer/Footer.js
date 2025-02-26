@@ -24,38 +24,38 @@ const Footer = () => {
           </p>
           <div className={styles.socialLinks}>
             <a href="#" className={styles.socialIcon}>
-              <i class="ri-facebook-fill"></i>
+              <i className="ri-facebook-fill"></i>
             </a>
             <a href="#" className={styles.socialIcon}>
-              <i class="ri-linkedin-fill"></i>
+              <i className="ri-linkedin-fill"></i>
             </a>
             <a href="#" className={styles.socialIcon}>
-              <i class="remixicon ri-twitter-fill"></i>
+              <i className="remixicon ri-twitter-fill"></i>
             </a>
             <a href="#" className={styles.socialIcon}>
-              <i class="ri-instagram-fill"></i>
+              <i className="ri-instagram-fill"></i>
             </a>
           </div>
         </div>
 
-        {/*  Links */}
+        {/* Quick Links */}
         <div className={styles.section}>
           <h3 className={styles.title}>Quick Links</h3>
           <ul className={styles.list}>
-            <li>
-              <a href="/aboutUs">About Us</a>
+            <li className={styles.listItem}>
+              <Link href="/aboutUs">About Us</Link>
             </li>
-            <li>
+            <li className={styles.listItem}>
               <a href="#">Become VOSO Store Partner</a>
             </li>
-            <li>
+            <li className={styles.listItem}>
               <a href="#">Pricing</a>
             </li>
-            <li>
+            <li className={styles.listItem}>
               <a href="#">Blogs</a>
             </li>
-            <li>
-              <a href="/Contact-Us">Contact Us</a>
+            <li className={styles.listItem}>
+              <Link href="/Contact-Us">Contact Us</Link>
             </li>
           </ul>
         </div>
@@ -64,6 +64,7 @@ const Footer = () => {
         <div className={styles.section}>
           <h3 className={styles.title}>Services</h3>
           <ul className={styles.list}>
+<<<<<<< HEAD
             <li className>Bill Payments</li>
             <li>
               <a href="/Prepaid-Recharges">Prepaid Recharge</a>
@@ -77,21 +78,44 @@ const Footer = () => {
             <li>
               <a href="/Insurance">Insurance</a>
             </li>
+=======
+            <li className={styles.listItem}>
+              <Link href="/Bill-Payments">Bill Payments</Link>
+            </li>
+            <li className={styles.listItem}>
+              <Link href="/Prepaid-Recharges">Prepaid Recharge</Link>
+            </li>
+            <li className={styles.listItem}>
+              <Link href="/Domestic-Money-Transfer">Domestic Money Transfer</Link>
+            </li>
+            <li className={styles.listItem}>
+              <Link href="/Online-Shopping">Online Shopping</Link>
+            </li>
+            <li className={styles.listItem}>
+              <Link href="/Travel-Booking">Travel Booking</Link>
+            </li>
+            <li className={styles.listItem}>
+              <Link href="/Pan-Card">Pan Card</Link>
+            </li>
+            <li className={styles.listItem}>
+              <Link href="/Insurance">Insurance</Link>
+            </li>
+>>>>>>> e45d1d8 (update vosostore)
           </ul>
         </div>
 
         {/* Information */}
         <div className={styles.section}>
-          <h3 className={styles.title}> Useful Information</h3>
+          <h3 className={styles.title}>Useful Information</h3>
           <ul className={styles.list}>
-            <li>
-              <a href="#">Privacy Policy</a>
+            <li className={styles.listItem}>
+              <Link href="/privacy-policy">Privacy Policy</Link>
             </li>
-            <li>
-              <a href="#">Terms & Conditions</a>
+            <li className={styles.listItem}>
+              <Link href="/terms-and-conditions">Terms & Conditions</Link>
             </li>
-            <li>
-              <a href="#">Refund policy</a>
+            <li className={styles.listItem}>
+              <Link href="/refund-policy">Refund Policy</Link>
             </li>
           </ul>
         </div>

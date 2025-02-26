@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./homepage.module.css";
-import Home from "@/app/page";
+// import Home from "@/app/page";
 
 const Homepage = () => {
   return (

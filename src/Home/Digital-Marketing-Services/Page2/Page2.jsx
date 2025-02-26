@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
+import styles from "./page2.module.css";
 import {
   FaArrowRight,
   FaSearch,
@@ -16,22 +17,22 @@ import {
   FaShoppingCart,
   FaObjectGroup,
   FaLightbulb,
-  FaMailBulk ,
-  FaBullseye, FaHandshake, FaChartPie, FaSyncAlt,
+  FaMailBulk,
+  FaBullseye,
+  FaHandshake,
+  FaChartPie,
+  FaSyncAlt,
 } from "react-icons/fa";
 
 import { FcCustomerSupport } from "react-icons/fc";
 
 import {
-
   FaChartLine,
   FaPenNib,
   FaLaptopCode,
   FaCogs,
   FaUserTie,
 } from "react-icons/fa";
-
-import styles from "./page2.module.css";
 
 const Page2 = () => {
   const cardData = [
@@ -99,7 +100,7 @@ const Page2 = () => {
         "Meet with the prospecting clients where they spend their time the most, on social media. Target the prospecting customers who are best suited for your business goals. Generate leads, boost your brand presence, let people know that you are in business. VOSO DMS helps you to create and serve well targeted and optimised PPC (Pay per click) campaigns, PPM (Pay per 1000 views) campaigns, PPL (Pay per lead) campaigns on social media platforms such as Facebook, Instagram, LinkedIn, and Twitter.",
     },
     {
-      icon: <FaMailBulk  />,
+      icon: <FaMailBulk />,
       title: "Email Marketing",
       description:
         "Generate interest and unleash the power of retargeted marketing with E-mail marketing campaigns that are optimised for high customer retention. VOSO DMS specialises in creating and deploying email campaigns that help you to boost your customer retention. VOSO DMS accomplishes this by turning the user data into a well-crafted personalised notification and email messages that turn your customers into your fans.Content Marketing",
@@ -242,14 +243,14 @@ const Page2 = () => {
       <Slider {...settings} className={styles.slider}>
         {cardData.map((data, index) => (
           <div className={styles.cardWrapper}>
-          <div key={index} className={styles.card}>
-            <div className={styles.icon}>{data.icon}</div>
-            <h2 className={styles.heading}>{data.title}</h2>
-            <p className={styles.paragraph}>{data.description}</p>
-            {/* <button className={styles.bt}>
+            <div key={index} className={styles.card}>
+              <div className={styles.icon}>{data.icon}</div>
+              <h2 className={styles.heading}>{data.title}</h2>
+              <p className={styles.paragraph}>{data.description}</p>
+              {/* <button className={styles.bt}>
               {data.button} <FaArrowRight />
             </button> */}
-          </div>
+            </div>
           </div>
         ))}
       </Slider>

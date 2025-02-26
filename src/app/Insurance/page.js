@@ -1,6 +1,7 @@
-import Page2 from '@/Home/insurance/Page2/Page2'
+// import Page2 from '@/Home/insurance/Page2/Page2'
 import React from 'react'
-
+import dynamic from 'next/dynamic'
+const Page2 = dynamic(() => import("@/Home/insurance/Page2/Page2"))
 const page = () => {
   return (
     <div>

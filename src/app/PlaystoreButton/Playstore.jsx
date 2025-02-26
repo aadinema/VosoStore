@@ -9,12 +9,12 @@ const Playstore = () => {
           href="https://play.google.com/store/apps/details?id=com.quintus.vosostore"
           target="_blank"
           type="button"
-          class="custom-btn"
+          className="custom-btn"
           data-toggle="tooltip"
           data-placement="top"
           title=""
         >
-          <div class="tooltiptext">
+          <div className="tooltiptext">
             <p>Find us On Play Store</p>
           </div>
           <svg

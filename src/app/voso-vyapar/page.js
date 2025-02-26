@@ -1,14 +1,22 @@
+"use client";
 import React from "react";
-import VosoVyapar from "@/Home/vosoVyapar/VosoVyapar";
-import ChooseVosovyapar from '@/Home/ChooseVosovyapar/ChooseVosovyapar'
-import CustomerServices from "@/Home/Customer/CustomerServices";
+import dynamic from "next/dynamic";
+
+// ✅ Dynamically import components
+const VosoVyapar = dynamic(() => import("@/Home/vosoVyapar/VosoVyapar"));
+const ChooseVosovyapar = dynamic(() =>
+  import("@/Home/ChooseVosovyapar/ChooseVosovyapar")
+);
+const CustomerServices = dynamic(() =>
+  import("@/Home/Customer/CustomerServices")
+);
 
 const page = () => {
   return (
     <div>
-      <VosoVyapar/>
-      <ChooseVosovyapar/>
-      <CustomerServices/>
+      <VosoVyapar />
+      <ChooseVosovyapar />
+      <CustomerServices />
     </div>
   );
 };

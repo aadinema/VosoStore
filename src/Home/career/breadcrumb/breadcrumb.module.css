@@ -1,0 +1,26 @@
+.breadcrumbContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    /* background-color: rgb(233, 232, 232); */
+  }
+.breadcrumb {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .breadcrumb a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .breadcrumb a:hover {
+    color: #0056b3;
+  }  

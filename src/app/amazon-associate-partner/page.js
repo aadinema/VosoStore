@@ -1,6 +1,13 @@
+import dynamic from "next/dynamic";
 
-import AmazonPage from "@/Home/shopping/Amazon-Associate-Partner/AmazonPage2/AmazonPage";
-import Page1 from "@/Home/shopping/Amazon-Associate-Partner/page1/Page1";
+// ✅ Dynamically Import Components
+const AmazonPage = dynamic(() =>
+  import("@/Home/shopping/Amazon-Associate-Partner/AmazonPage2/AmazonPage")
+);
+const Page1 = dynamic(() =>
+  import("@/Home/shopping/Amazon-Associate-Partner/page1/Page1")
+);
+
 
 import React from "react";
 

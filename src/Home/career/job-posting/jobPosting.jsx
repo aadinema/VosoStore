@@ -3,6 +3,8 @@ import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter
 import styles from "./JobPosting.module.css";
 import { BACKEND_URL } from "@/url/url";
+import dynamic from "next/dynamic";
+const Breadcrumb = dynamic(() => import("@/Home/career/breadcrumb/breadcrumb"));
 const JobPosting = ({ slug }) => {
   console.log(slug, "vyuyu");
 
@@ -82,22 +84,56 @@ const JobPosting = ({ slug }) => {
   }
 
   return (
-    <div className={styles.jobPosting}>
-      <h1 className={styles.title}>{data?.title}</h1>
-      <p className={styles.company}>Quintus Tech Pvt Ltd</p>
-      <p className={styles.type}>{data?.employmentType}</p>
-      <p className={styles.experience}>{data?.experience}</p>
-      <p className={styles.description}>{data?.description}</p>
+    <>
+      <Breadcrumb
+        data={{ head: "Vacancy-Details", subheading: "Vacancy-Details" }}
+      />
+      <div className={styles.jobPosting}>
+        <h1 className={styles.title}>{data?.title}</h1>
+        <p className={styles.company}>Quintus Tech Pvt Ltd</p>
+        <p className={styles.type}>{data?.employmentType}</p>
+        <p className={styles.experience}>{data?.experience}</p>
+        <p className={styles.description}>{data?.description}</p>
 
-      <p dangerouslySetInnerHTML={{ __html: data?.requirements }}></p>
+        <p
+          dangerouslySetInnerHTML={{ __html: data?.requirements }}
+          className={styles.requirements}
+        ></p>
 
-      <button className={styles.applyButton} onClick={handleApplyNow}>
-        Apply Now
-      </button>
-      <button className={styles.shareButton}>
-        Share this opening with friends
-      </button>
-    </div>
+        <button className={styles.applyButton} onClick={handleApplyNow}>
+          Apply Now
+        </button>
+        <div className={styles.shareButton}>
+          <h3 className={styles.shareText}>Share this opening with friends</h3>
+          <div className={styles.socialIcons}>
+            <a
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fquintustech.in%2Fcareer%2F"
+              target="_blank"
+            >
+              <i className="ri-facebook-fill"></i>
+            </a>
+
+            <a
+              href="https://x.com/intent/tweet?url=https%3A%2F%2Fquintustech.in%2Fcareer&text=Check%20out%20this%20awesome%20blog%20post!"
+              target="_blank"
+            >
+              <i className="ri-twitter-fill"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fquintustech.in%2Fcareer"
+              target="_blank"
+            >
+              <i className="ri-linkedin-fill"></i>
+            </a>
+
+            <i className="ri-whatsapp-fill">
+              <a href="#"></a>
+            </i>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

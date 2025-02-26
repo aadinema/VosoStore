@@ -7,6 +7,7 @@ import Navigation from "@/Home/Navigation/Mainbar/Navigation";
 import Footer from "@/Home/Footer/Footer";
 import Playstore from "./PlaystoreButton/Playstore";
 
+
 // Import Google Fonts correctly
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +19,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function RootLayout({ Children }) {
+export default function RootLayout({ children }) {
   useEffect(() => {
     document.body.style.overflowX = "hidden";
   }, []);
@@ -33,7 +34,7 @@ export default function RootLayout({ Children }) {
         <Topbar />
         <Navigation />
         <Playstore />
-        {Children}
+        {children}
         <Footer/>
       </body>
     </html>

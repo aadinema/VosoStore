@@ -1,16 +1,23 @@
-import Homepage from '@/Home/digital-marketing-services/Homepage/Homepage'
-import Page2 from '@/Home/digital-marketing-services/Page2/page2'
-import Page3 from '@/Home/digital-marketing-services/Page3/page3'
-import React from 'react'
+import dynamic from "next/dynamic";
+const Homepage = dynamic(() =>
+  import("@/Home/Digital-Marketing-Services/homepage/Homepage")
+);
+const Page2 = dynamic(() =>
+  import("@/Home/digital-marketing-services/Page2/Page2")
+);
+const Page3 = dynamic(() =>
+  import("@/Home/digital-marketing-services/Page3/Page3")
+);
+import React from "react";
 
 const page = () => {
   return (
     <div>
-      <Homepage/>
-      <Page2/>
-      <Page3/>
+      <Homepage />
+      <Page2 />
+      <Page3 />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

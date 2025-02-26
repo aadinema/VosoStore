@@ -1,5 +1,13 @@
-import Nykaa from '@/Home/shopping/Nykaa-Associate-Partner/NyKaaPage2/Nykaa'
-import Page1 from '@/Home/shopping/Nykaa-Associate-Partner/page1/Page1'
+"use client";
+import dynamic from "next/dynamic";
+
+// ✅ Dynamically import components
+const Nykaa = dynamic(() =>
+  import("@/Home/shopping/Nykaa-Associate-Partner/NyKaaPage2/Nykaa")
+);
+const Page1 = dynamic(() =>
+  import("@/Home/shopping/Nykaa-Associate-Partner/page1/Page1")
+);
 import React from 'react'
 
 const page = () => {

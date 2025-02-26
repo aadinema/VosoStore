@@ -136,7 +136,7 @@ const Navigation = () => {
   { label: "Booking Associate Partner", link: "booking-associate-partner" },
   { label: "Nykaa Associate Partner", link: "nykaa-associate-partner" },
 ].map((item) => (
-                      <li key={item}>
+                      <li key={item.link}>
                         <Link
                           href={`/${item.link.replace(/ /g, "-")}`}
                           className={styles.navLink}
@@ -173,7 +173,7 @@ const Navigation = () => {
   { label: "Hotel Booking", link: "hotel" },
   { label: "Rail Tickets Booking", link: "rail-booking" },
 ].map((item) => (
-                      <li key={item}>
+                      <li key={item.link}>
                         <Link
                           href={`/${item.link.replace(/ /g, "-")}`}
                           className={styles.navLink}

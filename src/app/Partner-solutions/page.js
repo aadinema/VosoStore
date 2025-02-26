@@ -1,12 +1,18 @@
+"use client";
 import React from "react";
-import Page1 from "@/Home/Partner-Components/Page1/Page1.jsx";
-import Page2 from "@/Home/Partner-Components/VosoCourierStandout/Page2";
+import dynamic from "next/dynamic";
+const Page1 = dynamic(() =>
+  import("@/Home/Partner-Components/Page1/Page1.jsx")
+);
+const Page2 = dynamic(() =>
+  import("@/Home/Partner-Components/VosoCourierStandout/Page2")
+);
 
 const Page = () => {
   return (
     <div>
       <Page1 />
-      <Page2/>
+      <Page2 />
     </div>
   );
 };

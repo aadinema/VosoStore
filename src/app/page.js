@@ -1,35 +1,38 @@
 "use client";
-// import styles from "./page.module.css";
-import Mainsection from "@/Home/MainSection/MainSection";
-import WhyChooseUs from "@/Home/whyChooseUs/whyChooseUs";
-import CardSlider from "@/Home/CardSlider/CardSlider";
-import VosoCarousel from "@/Home/vosocarousel/Vosocarousel";
-import Vosopage from "@/Home/Vosofirstpage/Vosopage";
-import CourierServices from "@/Home/CourierServicesHome/CourierServices";
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 
 import "./globals.css";
-import { useState, useEffect } from "react";
-import Popup from "./homepagepopup/Popup";
+
+// ✅ Dynamically Import Components
+const Mainsection = dynamic(() => import("@/Home/MainSection/MainSection"));
+const WhyChooseUs = dynamic(() => import("@/Home/whyChooseUs/whyChooseUs"));
+const CardSlider = dynamic(() => import("@/Home/CardSlider/CardSlider"));
+const VosoCarousel = dynamic(() => import("@/Home/vosocarousel/Vosocarousel"));
+const Vosopage = dynamic(() => import("@/Home/Vosofirstpage/Vosopage"));
+const CourierServices = dynamic(() =>
+  import("@/Home/CourierServicesHome/CourierServices")
+);
+const Popup = dynamic(() => import("./homepagepopup/Popup"), { ssr: false }); // Disable SSR for Popup
 
 export default function Home() {
+  const pathname = usePathname();
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    setShowPopup(true); // Show popup on page load
-  }, []);
+    const hasPopupBeenShown = sessionStorage.getItem("popupShown");
+
+    if (!hasPopupBeenShown) {
+      setShowPopup(true);
+      sessionStorage.setItem("popupShown", "true");
+    }
+  }, []); // Runs only on first mount
 
   return (
     <div>
-      {/* <h1>home page</h1>/ */}
-
-      {/* <Popup
-        imageUrl="https://vosostore.com/img/voso_vyapar_celebration_offer_1000.png" // Replace with your actual image path
-        isVisible={showPopup}
-        onClose={() => setShowPopup(false)}
-      /> */}
-
       <Popup
-        imageUrl="https://vosostore.com/img/voso_vyapar_celebration_offer_1000.png" // Replace with your actual image path
+        imageUrl="https://vosostore.com/img/voso_vyapar_celebration_offer_1000.png"
         isVisible={showPopup}
         onClose={() => setShowPopup(false)}
       />

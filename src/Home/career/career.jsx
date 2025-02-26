@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import styles from "./career.module.css";
+import Breadcrumb from "./breadcrumb/breadcrumb";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const Career = () => {
   const [jobs, setJobs] = useState([]);
@@ -62,7 +64,11 @@ const Career = () => {
   };
 
   if (loading) {
-    return <div className={styles.loading}>Loading careers...</div>;
+    return (
+      <div className={styles.loading}>
+        <span className={styles.loader}></span>
+      </div>
+    );
   }
 
   if (error) {
@@ -71,14 +77,7 @@ const Career = () => {
 
   return (
     <div className={styles.careerContainer}>
-      <h1 className={styles.title}>Career</h1>
-      <p className={styles.breadcrumb}>
-        <Link href="/" className={styles.homeLink}>
-          Home
-        </Link>{" "}
-        &gt; Career
-      </p>
-
+      <Breadcrumb data={{ head: "Career", subheading: "Career" }} />
       <section className={styles.headerSection}>
         <h2 className={styles.subTitle}>Career / Job Opportunities</h2>
         <div className={styles.categories}>
